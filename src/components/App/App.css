@@ -1,15 +1,21 @@
 .App {
   text-align: center;
+  align-items: center;
+  background-color:rgb(163, 25, 25)
 }
 
 .App-header {
-  background-color: #222;
   padding: 1em;
-  color: white;
+  color: rgb(163, 25, 25);
   margin-bottom: 1em;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 2.5em;
+  font-family: 'Dosis', sans-serif;
+}
+
+.header-gallery-container {
+  background-color: #e6d300;
 }
 
