@@ -24,11 +24,25 @@ function App() {
     }, []);
 
     const fetchGalleryItems = () => {
+      console.log('in fetchGalleryItems');
       axios({
         method:'GET',
         url: '/gallery'
       }).then(response => {
         setGalleryList(response.data);
+      }).catch(error => {
+        console.log(error);
+        alert('There\'s an error.');
+      })
+    }
+
+    const updateLikeCount = (id) => {
+      console.log('in updateLikeCount', id);
+      axios({
+        method: 'PUT',
+        url: `/gallery/like/${id}`
+      }).then(respnse => {
+        fetchGalleryItems();
       }).catch(error => {
         console.log(error);
         alert('There\'s an error.');
@@ -60,9 +74,14 @@ function App() {
                         />
                         {/*Item ends here*/}
                         <CardActions disableSpacing color="error">
-                          <IconButton aria-label="add to favorites" color="error">
-                            <FontAwesomeIcon icon={faPepperHot} />
+                          <IconButton 
+                            aria-label="add to favorites" 
+                            color="error"
+                            onClick={(event) => updateLikeCount(item.id)}>
+                            <FontAwesomeIcon 
+                              icon={faPepperHot}/>
                           </IconButton>
+                          <span className="like-count">{item.likes}</span>
                         </CardActions>
                       </Card>
                     </Grid>
