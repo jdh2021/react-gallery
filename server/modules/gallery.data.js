@@ -1,5 +1,6 @@
-const galleryItems = [
-    { id: 1, path: 'images/goat_small.jpg', description: 'Photo of a goat taken at Glacier National Park.', likes: 0 }
+const galleryItems = [  { id: 1, path: 'images/thaipeppers.jpg', description: 'Photo of thai peppers', likes: 0}, 
+                        { id: 2, path: 'images/bellpeppers.jpg', description: 'Photo of bell peppers', likes: 0},
+                        { id: 3, path: 'images/ghostpeppers.jpg', description: 'Photo of ghost peppers', likes: 0}
 ];
 
 module.exports = galleryItems;
