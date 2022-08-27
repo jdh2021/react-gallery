@@ -11,7 +11,9 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
 import Container from '@mui/material/Container';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import IconButton from '@mui/material/IconButton';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPepperHot } from '@fortawesome/free-solid-svg-icons'
 
 function App() {
     const [galleryItem, setGalleryItem] = useState('');
@@ -42,7 +44,7 @@ function App() {
           <header className="App-header">
             <h1 className="App-title">Gallery of My Life</h1>
           </header>
-          {/*Gallery goes here*/}
+          {/*Gallery starts here*/}
           <Grid container 
             spacing = {2}
             justifyContent="center"
@@ -51,15 +53,23 @@ function App() {
             { galleryList.map((item) => {
               return  <Grid item key={item.id}>
                       <Card sx={{maxWidth: 150}} elevation={3}>
+                        {/*Item starts here*/}
                         <CardMedia
                           component="img"
                           image={item.path}
                         />
+                        {/*Item ends here*/}
+                        <CardActions disableSpacing color="error">
+                          <IconButton aria-label="add to favorites" color="error">
+                            <FontAwesomeIcon icon={faPepperHot} />
+                          </IconButton>
+                        </CardActions>
                       </Card>
                     </Grid>
               })
             }
           </Grid>
+           {/*Gallery ends here*/}
         </Container>
       </div>
     );
