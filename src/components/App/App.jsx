@@ -14,6 +14,7 @@ import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPepperHot } from '@fortawesome/free-solid-svg-icons'
+import { Box } from '@mui/system';
 
 function App() {
     const [galleryItem, setGalleryItem] = useState('');
@@ -60,31 +61,60 @@ function App() {
           </header>
           {/*Gallery starts here*/}
           <Grid container 
-            spacing = {2}
+            spacing = {3}
             justifyContent="center"
             direction="row"
             alignItems="center">
             { galleryList.map((item) => {
               return  <Grid item key={item.id}>
-                      <Card sx={{maxWidth: 150}} elevation={3}>
-                        {/*Item starts here*/}
-                        <CardMedia
-                          component="img"
-                          image={item.path}
-                        />
-                        {/*Item ends here*/}
-                        <CardActions disableSpacing color="error">
-                          <IconButton 
-                            aria-label="add to favorites" 
-                            color="error"
-                            onClick={(event) => updateLikeCount(item.id)}>
-                            <FontAwesomeIcon 
-                              icon={faPepperHot}/>
-                          </IconButton>
-                          <span className="like-count">{item.likes}</span>
-                        </CardActions>
-                      </Card>
-                    </Grid>
+                <Card elevation={3}>
+                  {/*Photo Item starts here*/}
+                  {/* <Box sx={{ 
+                    width: 175,
+                    height: 175,
+                    '&:hover': {
+                      opacity: 0.7,
+                    }}}>
+                    <CardMedia
+                      component="img"
+                      image={item.path}
+                    />
+                  </Box> */}
+                  {/*Photo Item ends here*/}
+
+                  {/*Description Item starts here*/}
+                  <Box sx={{ 
+                    width: 175,
+                    height: 175,
+                    color: "#A31919",
+                    fontFamily: "'Dosis', sans-serif",
+                    backgroundColor: "#CFE470",
+                    '&:hover': {
+                      backgroundColor: "#DBEB94"},
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center'
+                    }}>
+                    <CardContent>
+                      {item.description}
+                    </CardContent>
+                  </Box> 
+                  {/*Description Item ends here */}
+                  
+                  <Box sx={{backgroundColor: "#DBEB94"}}>
+                    <CardActions disableSpacing color="error">
+                      <IconButton 
+                        aria-label="add to favorites" 
+                        color="error"
+                        onClick={(event) => updateLikeCount(item.id)}>
+                        <FontAwesomeIcon 
+                          icon={faPepperHot}/>
+                      </IconButton>
+                      <span className="like-count">{item.likes}</span>
+                    </CardActions>
+                  </Box>
+                </Card>
+              </Grid>
               })
             }
           </Grid>
@@ -95,3 +125,5 @@ function App() {
 }
 
 export default App;
+
+

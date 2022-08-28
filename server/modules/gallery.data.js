@@ -1,6 +1,9 @@
-const galleryItems = [  { id: 1, path: 'images/thaipeppers.jpg', description: 'Photo of thai peppers', likes: 0}, 
-                        { id: 2, path: 'images/bellpeppers.jpg', description: 'Photo of bell peppers', likes: 0},
-                        { id: 3, path: 'images/ghostpeppers.jpg', description: 'Photo of ghost peppers', likes: 0}
+const galleryItems = [  { id: 1, path: 'images/thai.jpg', description: 'Thai Chili', likes: 0}, 
+                        { id: 2, path: 'images/bell.jpg', description: 'Bell Pepper', likes: 0},
+                        { id: 3, path: 'images/ghost.jpg', description: 'Bhut Jolokia (Ghost)', likes: 0},
+                        { id: 4, path: 'images/habanero.jpg', description: 'Habanero', likes: 0},
+                        { id: 5, path: 'images/jalapeno.jpg', description: 'Jalapeno', likes: 0},
+                        { id: 6, path: 'images/goldencayenne.jpg', description: 'Golden Cayenne', likes: 0}
 ];
 
 module.exports = galleryItems;
