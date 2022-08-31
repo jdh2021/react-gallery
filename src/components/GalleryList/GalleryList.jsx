@@ -1,7 +1,7 @@
 import Grid from '@mui/material/Grid';
 import GalleryItem from '../GalleryItem/GalleryItem';
 
-function GalleryList ({galleryList, updateLikeCount}) {
+function GalleryList ({galleryList, updateLikeCount, deleteItem}) {
     return <Grid container 
          spacing = {3}
          justifyContent="center"
@@ -12,6 +12,7 @@ function GalleryList ({galleryList, updateLikeCount}) {
                     key={item.id} 
                     item={item} 
                     updateLikeCount={updateLikeCount}
+                    deleteItem={deleteItem}
                   />
            })
          }

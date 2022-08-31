@@ -6,11 +6,11 @@ import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
 import IconButton from '@mui/material/IconButton';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPepperHot } from '@fortawesome/free-solid-svg-icons'
+import { faPepperHot, faTrashCan} from '@fortawesome/free-solid-svg-icons'
 import { Box } from '@mui/system';
 import { CardActionArea } from '@mui/material';
 
-function GalleryItem ({item, updateLikeCount}) {
+function GalleryItem ({item, updateLikeCount, deleteItem}) {
 
     const [displayPhoto, setDisplayPhoto] = useState(true);
 
@@ -48,15 +48,27 @@ function GalleryItem ({item, updateLikeCount}) {
                 }
             </Box> 
             <Box sx={{backgroundColor: "#DBEB94"}}>
-                <CardActions disableSpacing color="error">
+                <CardActions 
+                    disableSpacing color="error"
+                    sx= {{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between'
+                    }}>
+                    <Box>
+                        <IconButton 
+                            aria-label="add to favorites" 
+                            color="error"
+                            onClick={() => updateLikeCount(item.id)}>
+                            <FontAwesomeIcon icon={faPepperHot} />
+                        </IconButton>
+                        <span className="like-count">{item.likes}</span>
+                    </Box>
                     <IconButton 
-                        aria-label="add to favorites" 
-                        color="error"
-                        onClick={() => updateLikeCount(item.id)}>
-                        <FontAwesomeIcon 
-                        icon={faPepperHot}/>
+                        sx={{color: "#90B001"}}
+                        onClick={() => deleteItem(item.id)}>
+                        <FontAwesomeIcon icon={faTrashCan} />
                     </IconButton>
-                    <span className="like-count">{item.likes}</span>
                 </CardActions>
             </Box>
         </Card>

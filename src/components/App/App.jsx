@@ -40,6 +40,20 @@ function App() {
       })
     }
 
+    const deleteItem = (id) => {
+      console.log('in deleteItem', id)
+      axios({
+        method: 'DELETE',
+        url: `/gallery/${id}`
+      }).then(response => {
+        console.log(response.data);
+        fetchGalleryItems();
+      }).catch(error => {
+        console.log(error);
+        alert('There\'s an error.');
+      });
+  }
+
     return (
       <div className="App">
         <Container className="header-gallery-container" style={{ minHeight: '100vh'}} maxWidth="md">
@@ -47,8 +61,10 @@ function App() {
             <h1 className="App-title">Pepper Perusal</h1>
           </header>
           <GalleryList 
-            galleryList={galleryList} 
-            updateLikeCount={updateLikeCount}/>
+            galleryList = {galleryList} 
+            updateLikeCount = {updateLikeCount}
+            deleteItem = {deleteItem} 
+          />
         </Container>
       </div>
     );
