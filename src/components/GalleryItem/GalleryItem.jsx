@@ -33,8 +33,7 @@ function GalleryItem ({item, updateLikeCount}) {
                             }}
                         component="img" 
                         image={item.path}/> 
-                </CardActionArea>
-                :
+                </CardActionArea> :
                 <CardActionArea>
                     <CardMedia
                         sx={{ 
@@ -46,9 +45,9 @@ function GalleryItem ({item, updateLikeCount}) {
                             backgroundColor: "#C9E05E",
                                 '&:hover': {
                             backgroundColor: "#CFE470"},
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center'
+                            display: 'flex',
+                            flexDirection: 'column',
+                            justifyContent: 'center'
                         }}>
                     {item.description}
                     </CardMedia>

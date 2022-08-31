@@ -19,6 +19,7 @@ function App() {
         method:'GET',
         url: '/gallery'
       }).then(response => {
+        console.log(response.data);
         setGalleryList(response.data);
       }).catch(error => {
         console.log(error);
@@ -32,6 +33,7 @@ function App() {
         method: 'PUT',
         url: `/gallery/like/${id}`
       }).then(response => {
+        console.log(response.data);
         fetchGalleryItems();
       }).catch(error => {
         console.log(error);
@@ -43,7 +45,7 @@ function App() {
       <div className="App">
         <Container className="header-gallery-container" style={{ minHeight: '100vh'}} maxWidth="md">
           <header className="App-header">
-            <h1 className="App-title">Gallery of My Life</h1>
+            <h1 className="App-title">Pepper Perusal</h1>
           </header>
           <GalleryList galleryList = {galleryList} updateLikeCount = {updateLikeCount}/>
         </Container>
