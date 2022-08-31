@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
@@ -13,23 +14,22 @@ function GalleryItem ({item, updateLikeCount}) {
 
     const [displayPhoto, setDisplayPhoto] = useState(true);
 
-    return <Card elevation={3}>
-        <Box onClick={()=> setDisplayPhoto(!displayPhoto)}>
-            { displayPhoto ?
-                <CardActionArea>
-                    <CardMedia 
-                        sx={{ 
+    return <Grid item>
+        <Card elevation={3}>
+            <Box onClick={()=> setDisplayPhoto(!displayPhoto)}>
+                { displayPhoto ?
+                    <CardActionArea>
+                        <CardMedia sx={{ 
                             width: 175,
                             height: 175,
                             '&:hover': {
                                 opacity: 0.7},
                             }}
-                        component="img" 
-                        image={item.path}/> 
-                </CardActionArea> :
-                <CardActionArea>
-                    <CardMedia
-                        sx={{ 
+                            component="img" 
+                            image={item.path}/> 
+                    </CardActionArea> :
+                    <CardActionArea>
+                        <CardMedia sx={{ 
                             width: 175,
                             height: 175,
                             color: "#A31919",
@@ -41,25 +41,26 @@ function GalleryItem ({item, updateLikeCount}) {
                             display: 'flex',
                             flexDirection: 'column',
                             justifyContent: 'center'
-                        }}>
-                    {item.description}
-                    </CardMedia>
-                </CardActionArea>
-            }
-        </Box> 
-        <Box sx={{backgroundColor: "#DBEB94"}}>
-            <CardActions disableSpacing color="error">
-                <IconButton 
-                    aria-label="add to favorites" 
-                    color="error"
-                    onClick={() => updateLikeCount(item.id)}>
-                    <FontAwesomeIcon 
-                    icon={faPepperHot}/>
-                </IconButton>
-                <span className="like-count">{item.likes}</span>
-            </CardActions>
-        </Box>
-    </Card>
+                            }}>
+                            {item.description}
+                        </CardMedia>
+                    </CardActionArea>
+                }
+            </Box> 
+            <Box sx={{backgroundColor: "#DBEB94"}}>
+                <CardActions disableSpacing color="error">
+                    <IconButton 
+                        aria-label="add to favorites" 
+                        color="error"
+                        onClick={() => updateLikeCount(item.id)}>
+                        <FontAwesomeIcon 
+                        icon={faPepperHot}/>
+                    </IconButton>
+                    <span className="like-count">{item.likes}</span>
+                </CardActions>
+            </Box>
+        </Card>
+    </Grid>
 }
 
 export default GalleryItem;

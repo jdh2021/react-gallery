@@ -46,7 +46,9 @@ function App() {
           <header className="App-header">
             <h1 className="App-title">Pepper Perusal</h1>
           </header>
-          <GalleryList galleryList = {galleryList} updateLikeCount = {updateLikeCount}/>
+          <GalleryList 
+            galleryList={galleryList} 
+            updateLikeCount={updateLikeCount}/>
         </Container>
       </div>
     );
