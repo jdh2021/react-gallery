@@ -9,19 +9,12 @@ import { faPepperHot } from '@fortawesome/free-solid-svg-icons'
 import { Box } from '@mui/system';
 import { CardActionArea } from '@mui/material';
 
-
-
 function GalleryItem ({item, updateLikeCount}) {
 
     const [displayPhoto, setDisplayPhoto] = useState(true);
 
-    const togglePhoto = () => {
-        console.log('in togglePhoto');
-        setDisplayPhoto(!displayPhoto);
-    }
-
     return <Card elevation={3}>
-        <Box onClick={togglePhoto}>
+        <Box onClick={()=> setDisplayPhoto(!displayPhoto)}>
             { displayPhoto ?
                 <CardActionArea>
                     <CardMedia 
@@ -59,7 +52,7 @@ function GalleryItem ({item, updateLikeCount}) {
                 <IconButton 
                     aria-label="add to favorites" 
                     color="error"
-                    onClick={(event) => updateLikeCount(item.id)}>
+                    onClick={() => updateLikeCount(item.id)}>
                     <FontAwesomeIcon 
                     icon={faPepperHot}/>
                 </IconButton>

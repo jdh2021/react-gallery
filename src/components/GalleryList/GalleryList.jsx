@@ -8,8 +8,8 @@ function GalleryList ({galleryList, updateLikeCount}) {
          direction="row"
          alignItems="center">
          { galleryList.map((item) => {
-           return <Grid item key={item.id}> 
-                    <GalleryItem item={item} updateLikeCount={updateLikeCount}/>
+           return <Grid item> 
+                    <GalleryItem key={item.id} item={item} updateLikeCount={updateLikeCount}/>
                 </Grid>
            })
          }
