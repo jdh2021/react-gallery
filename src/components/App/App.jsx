@@ -86,6 +86,11 @@ function App() {
           galleryList = {galleryList} 
           updateLikeCount = {updateLikeCount}
           deleteItem = {deleteItem} 
+          addItem = {addItem} 
+          itemPath = {itemPath}
+          setItemPath = {setItemPath}
+          itemDescription = {itemDescription}
+          setItemDescription = {setItemDescription}
         />
       </Container>
     </div>
