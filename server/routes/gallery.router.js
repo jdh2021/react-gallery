@@ -2,6 +2,21 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
+//POST Route
+router.post('/', (req, res) => {
+    console.log('in POST /gallery', req.body);
+    const queryText = `INSERT INTO "gallery" ("path", "description", "likes") 
+                        VALUES ($1, $2, $3);`;
+    pool.query(queryText, [req.body.path, req.body.description, req.body.likes])
+    .then((result) => {
+        console.log('POST success');
+        res.sendStatus(200);
+    }).catch((error) => {
+        console.log('Error in POST /gallery', error);
+        res.sendStatus(500);
+    });
+});
+
 // PUT Route
 router.put('/like/:id', (req, res) => {
     const galleryId = req.params.id;
