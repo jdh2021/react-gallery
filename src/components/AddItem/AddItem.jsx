@@ -73,7 +73,7 @@ function AddItem ({addItem, itemDescription, itemPath, setItemPath, setItemDescr
                     color="error"
                     margin="dense"
                     id="pepper-path"
-                    label="URL"
+                    label="Image URL"
                     fullWidth
                     variant="standard"
                     value={itemPath}

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import GalleryList from '../GalleryList/GalleryList';
 import Container from '@mui/material/Container';
+import Header from '../Header/Header';
 
 function App() {
     const [galleryList, setGalleryList] = useState([]);
@@ -79,9 +80,12 @@ function App() {
   return (
     <div className="App">
       <Container className="header-gallery-container" style={{ minHeight: '100vh'}} maxWidth="md">
-        <header className="App-header">
-          <h1 className="App-title">Pepper Perusal</h1>
-        </header>
+        <Header 
+          addItem = {addItem}
+          itemPath = {itemPath}
+          setItemPath = {setItemPath}
+          itemDescription = {itemDescription}
+          setItemDescription = {setItemDescription} />
         <GalleryList 
           galleryList = {galleryList} 
           updateLikeCount = {updateLikeCount}

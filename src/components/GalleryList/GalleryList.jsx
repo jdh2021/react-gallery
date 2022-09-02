@@ -16,13 +16,7 @@ function GalleryList ({galleryList, updateLikeCount, deleteItem, addItem, itemPa
                     deleteItem={deleteItem}
                   />
            })
-         } <AddItem 
-              addItem = {addItem} 
-              itemPath = {itemPath}
-              setItemPath = {setItemPath}
-              itemDescription = {itemDescription}
-              setItemDescription = {setItemDescription} 
-            />
+         } 
        </Grid>
     }
 
