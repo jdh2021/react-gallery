@@ -8,13 +8,13 @@ router.post('/', (req, res) => {
     const queryText = `INSERT INTO "gallery" ("path", "description", "likes") 
                         VALUES ($1, $2, $3);`;
     pool.query(queryText, [req.body.path, req.body.description, req.body.likes])
-    .then((result) => {
-        console.log('POST success');
-        res.sendStatus(200);
-    }).catch((error) => {
-        console.log('Error in POST /gallery', error);
-        res.sendStatus(500);
-    });
+        .then((result) => {
+            console.log('POST success');
+            res.sendStatus(200);
+        }).catch((error) => {
+            console.log('Error in POST /gallery', error);
+            res.sendStatus(500);
+        });
 });
 
 // PUT Route
@@ -30,7 +30,7 @@ router.put('/like/:id', (req, res) => {
         console.log('Error in PUT /gallery/likes', error);
         res.sendStatus(500);
     });
-}); 
+});
 
 // DELETE Route
 router.delete('/:id', (req, res) => {
@@ -50,7 +50,7 @@ router.delete('/:id', (req, res) => {
 // GET Route
 router.get('/', (req, res) => {
     console.log('in GET /gallery')
-    const queryText = 'SELECT * FROM "gallery" ORDER BY "description";';
+    const queryText = 'SELECT * FROM "gallery" ORDER BY "id";';
     pool.query(queryText).then((results) => {
         console.log('SELECT success');
         res.send(results.rows);
@@ -58,6 +58,6 @@ router.get('/', (req, res) => {
         console.log('Error in GET /gallery', error);
         res.sendStatus(500);
     });
-}); 
+});
 
 module.exports = router;
