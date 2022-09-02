@@ -17,21 +17,16 @@ import TextField from '@mui/material/TextField';
 function AddItem ({addItem, itemDescription, itemPath, setItemPath, setItemDescription}) {
 
     const [open, setOpen] = useState(false);
-
     const handleClose = () => {
         setOpen(false);
     };
 
-    return <Card 
-                elevation={3}
-                sx={{ 
-                    width: 75,
-                    height: 75}}>
+    return <Card elevation={3} sx={{ width: 50, height: 50}}>
             <CardActionArea>
                 <Box onClick={()=> setOpen(!open)}>
                     <CardMedia sx={{ 
-                        width: 75,
-                        height: 75,
+                        width: 50,
+                        height: 50,
                         color: "#A31919",
                         fontSize: "1.2rem",
                         fontFamily: "'Dosis', sans-serif",
