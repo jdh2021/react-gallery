@@ -1,4 +1,4 @@
-import { useState} from 'react';
+import { useState } from 'react';
 import { Box } from '@mui/system';
 import { CardActionArea } from '@mui/material';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -14,72 +14,68 @@ import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
 
 
-function AddItem ({addItem, itemDescription, itemPath, setItemPath, setItemDescription}) {
+function AddItem({ addItem, itemDescription, itemPath, setItemPath, setItemDescription }) {
 
     const [open, setOpen] = useState(false);
-    const handleClose = () => {
-        setOpen(false);
-    };
 
-    return <Card elevation={3} sx={{ width: 50, height: 50}}>
-            <CardActionArea>
-                <Box onClick={()=> setOpen(!open)}>
-                    <CardMedia sx={{ 
-                        width: 50,
-                        height: 50,
-                        color: "#A31919",
-                        fontSize: "1.2rem",
-                        fontFamily: "'Dosis', sans-serif",
-                        backgroundColor: "#DBEB94",
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'center'
-                        }}>
-                        <Box>
-                            <FontAwesomeIcon
-                                icon={faPepperHot}
-                                color="#d32f2f"
-                                size="lg"/>
-                            <FontAwesomeIcon 
-                                color="#d32f2f"
-                                icon={faPlus}
-                                size="xs"/>
-                        </Box>
-                        </CardMedia>
-                </Box> 
-            </CardActionArea>
-        <Dialog 
-            open={open}    
-            onClose={handleClose}
-            PaperProps={{ sx: { backgroundColor: "#DBEB94", color: "#A31919"} }}>
+    return <Card elevation={3} sx={{ width: 50, height: 50 }}>
+        <CardActionArea>
+            <Box onClick={() => setOpen(!open)}>
+                <CardMedia sx={{
+                    width: 50,
+                    height: 50,
+                    fontSize: "1.2rem",
+                    fontFamily: "'Dosis', sans-serif",
+                    backgroundColor: "#DBEB94",
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center'
+                }}>
+                    <Box>
+                        <FontAwesomeIcon
+                            icon={faPepperHot}
+                            color="#D32F2F"
+                            size="lg" />
+                        <FontAwesomeIcon
+                            icon={faPlus}
+                            color="#D32F2F"
+                            size="xs" />
+                    </Box>
+                </CardMedia>
+            </Box>
+        </CardActionArea>
+        <Dialog
+            open={open}
+            onClose={() => setOpen(!open)}
+            PaperProps={{ sx: { backgroundColor: "#DBEB94", color: "#A31919" } }}>
             <DialogTitle>Upload a pepper picture</DialogTitle>
             <DialogContent>
                 <TextField
                     color="error"
                     margin="dense"
-                    id="pepper-description"
+                    id="Pepper-description"
                     label="Pepper Type"
                     fullWidth
                     variant="standard"
                     value={itemDescription}
                     onChange={(event) => setItemDescription(event.target.value)}
-                    />
+                />
                 <TextField
                     color="error"
                     margin="dense"
-                    id="pepper-path"
+                    id="Pepper-path"
                     label="Image URL"
                     fullWidth
                     variant="standard"
                     value={itemPath}
                     onChange={(event) => setItemPath(event.target.value)}
-                    />
+                />
             </DialogContent>
             <DialogActions>
                 <IconButton onClick={addItem}>
                     <FontAwesomeIcon color="#A31919" icon={faUpload} />
                 </IconButton>
-                <IconButton onClick={()=> setOpen(!open)}>
+                <IconButton onClick={() => setOpen(!open)}>
                     <FontAwesomeIcon color="#90B001" icon={faXmark} />
                 </IconButton>
             </DialogActions>

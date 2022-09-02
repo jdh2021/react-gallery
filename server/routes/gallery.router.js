@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool.js');
 
-//POST Route
+// POST Route
 router.post('/', (req, res) => {
     console.log('in POST /gallery', req.body);
     const queryText = `INSERT INTO "gallery" ("path", "description", "likes") 

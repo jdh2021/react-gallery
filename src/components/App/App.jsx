@@ -5,7 +5,6 @@ import Container from '@mui/material/Container';
 import Header from '../Header/Header';
 import GalleryList from '../GalleryList/GalleryList';
 
-
 function App() {
   const [galleryList, setGalleryList] = useState([]);
   const [itemDescription, setItemDescription] = useState('');
@@ -57,9 +56,18 @@ function App() {
     });
   }
 
-  const addItem = (event) => {
+  const addItem = () => {
     console.log('in addItem');
-    event.preventDefault();
+    if (itemPath === '' || itemDescription === '') {
+      alert('Please add a pepper type and image URL below.');
+      return;
+    }
+    for(let item of galleryList) {
+      if (item.path === itemPath)  {
+        alert('A photo with this URL has already been added.');
+        return;
+      }
+    }
     axios({
       method: 'POST',
       url: '/gallery',
@@ -69,24 +77,26 @@ function App() {
         likes: 0
       }
     }).then(response => {
+      console.log(response);
       setItemDescription('');
       setItemPath('');
       fetchGalleryItems();
     }).catch(error => {
       console.log(error);
-      alert('Something went wrong!');
+      alert('There\'s an error.');
     });
   }
 
   return (
     <div className="App">
-      <Container className="header-gallery-container" maxWidth="md">
+      <Container className="Header-gallery" maxWidth="md">
         <Header
           addItem={addItem}
           itemPath={itemPath}
           setItemPath={setItemPath}
           itemDescription={itemDescription}
-          setItemDescription={setItemDescription} />
+          setItemDescription={setItemDescription} 
+        />
         <GalleryList
           galleryList={galleryList}
           updateLikeCount={updateLikeCount}
@@ -95,11 +105,12 @@ function App() {
           itemPath={itemPath}
           setItemPath={setItemPath}
           itemDescription={itemDescription}
-          setItemDescription={setItemDescription} />
+          setItemDescription={setItemDescription} 
+        />
       </Container>
     </div>
   );
-}
+};
 
 export default App;
 

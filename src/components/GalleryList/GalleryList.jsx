@@ -1,6 +1,6 @@
-import Grid from '@mui/material/Grid';
-import GalleryItem from '../GalleryItem/GalleryItem';
 import Container from '@mui/material/Container';
+import GalleryItem from '../GalleryItem/GalleryItem';
+import Grid from '@mui/material/Grid';
 
 function GalleryList({ galleryList, updateLikeCount, deleteItem }) {
   return <Container className="gallery-container" maxWidth="md">
@@ -15,7 +15,7 @@ function GalleryList({ galleryList, updateLikeCount, deleteItem }) {
           item={item}
           updateLikeCount={updateLikeCount}
           deleteItem={deleteItem} />
-      })
+        })
       }
     </Grid>
   </Container>

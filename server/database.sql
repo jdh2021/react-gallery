@@ -2,7 +2,7 @@
 
 CREATE TABLE "gallery" (
 	"id" serial primary key,
-	"path" varchar (120) not null,
+	"path" varchar (240) not null,
 	"description" varchar (40) not null,
 	"likes" integer
 );

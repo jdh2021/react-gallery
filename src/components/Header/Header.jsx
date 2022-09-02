@@ -18,7 +18,8 @@ function Header({ addItem, itemPath, setItemPath, itemDescription, setItemDescri
                     itemPath={itemPath}
                     setItemPath={setItemPath}
                     itemDescription={itemDescription}
-                    setItemDescription={setItemDescription} />
+                    setItemDescription={setItemDescription} 
+                />
             </Grid>
         </Grid>
     </Box>

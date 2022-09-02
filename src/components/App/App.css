@@ -11,13 +11,13 @@
   font-family: 'Dosis', sans-serif;
 }
 
-.header-gallery-container {
-  background-color: #e6d300;
+.Header-gallery {
+  background-color: #EEE04D;
   padding-bottom: 2em;
   min-height: 100vh;
 }
 
-.like-count {
+.Like-count {
   font-family: 'Dosis', sans-serif;
-  color: #d32f2f;
+  color: #D32F2F;
 }

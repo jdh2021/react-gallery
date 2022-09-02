@@ -1,16 +1,25 @@
 import { useState } from 'react';
 
-import Grid from '@mui/material/Grid';
+import { Box } from '@mui/system';
+import { CardActionArea } from '@mui/material';
+import { faPepperHot, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import CardActions from '@mui/material/CardActions';
+import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPepperHot, faTrashCan } from '@fortawesome/free-solid-svg-icons'
-import { Box } from '@mui/system';
-import { CardActionArea } from '@mui/material';
+
 
 function GalleryItem({ item, updateLikeCount, deleteItem }) {
+
+    let likeCount;
+    if (item.likes > 0) {
+        likeCount = <span className="Like-count">{item.likes}</span>
+    } else {
+        likeCount = <span className="Like-count"></span>
+    }
 
     const [displayPhoto, setDisplayPhoto] = useState(true);
 
@@ -24,17 +33,17 @@ function GalleryItem({ item, updateLikeCount, deleteItem }) {
                             height: 175,
                             '&:hover': {
                                 opacity: 0.7
-                            },
-                        }}
+                            }}}
                             component="img"
-                            image={item.path} />
+                            image={item.path} 
+                        />
                     </CardActionArea> :
                     <CardActionArea>
                         <CardMedia sx={{
                             width: 175,
                             height: 175,
                             color: "#A31919",
-                            fontSize: "1.2rem",
+                            fontSize: "1.25rem",
                             fontFamily: "'Dosis', sans-serif",
                             backgroundColor: "#C9E05E",
                             '&:hover': {
@@ -42,32 +51,28 @@ function GalleryItem({ item, updateLikeCount, deleteItem }) {
                             },
                             display: 'flex',
                             flexDirection: 'column',
-                            justifyContent: 'center'
-                        }}>
+                            justifyContent: 'center'}}>
                             {item.description}
                         </CardMedia>
                     </CardActionArea>
                 }
             </Box>
-            <Box sx={{ backgroundColor: "#DBEB94" }}>
-                <CardActions
-                    disableSpacing color="error"
-                    sx={{
+            <Box sx={{backgroundColor: "#DBEB94"}}>
+                <CardActions sx={{
                         display: 'flex',
                         flexDirection: 'row',
                         justifyContent: 'space-between'
                     }}>
                     <Box>
                         <IconButton
-                            aria-label="add to favorites"
                             color="error"
                             onClick={() => updateLikeCount(item.id)}>
                             <FontAwesomeIcon icon={faPepperHot} />
                         </IconButton>
-                        <span className="like-count">{item.likes}</span>
+                        {likeCount}
                     </Box>
                     <IconButton
-                        sx={{ color: "#90B001" }}
+                        sx={{color: "#90B001"}}
                         onClick={() => deleteItem(item.id)}>
                         <FontAwesomeIcon icon={faTrashCan} />
                     </IconButton>
