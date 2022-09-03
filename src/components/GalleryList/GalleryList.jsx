@@ -3,6 +3,7 @@ import GalleryItem from '../GalleryItem/GalleryItem';
 import Grid from '@mui/material/Grid';
 
 function GalleryList({ galleryList, updateLikeCount, deleteItem }) {
+  /* iterates over each item in galleryList and returns a GalleryItem component */
   return <Container className="gallery-container" maxWidth="md">
     <Grid container
       spacing={3}
@@ -15,7 +16,7 @@ function GalleryList({ galleryList, updateLikeCount, deleteItem }) {
           item={item}
           updateLikeCount={updateLikeCount}
           deleteItem={deleteItem} />
-        })
+      })
       }
     </Grid>
   </Container>
