@@ -6,6 +6,9 @@ This React photo gallery is for true pepper fiends. Add images and descriptions 
 
 ## Demo
 
+<p align ="center">
+    <img src="react-pepper-gallery.gif" />   
+</p>
 
 ### Prerequisites
 
