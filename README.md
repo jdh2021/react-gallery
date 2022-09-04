@@ -2,7 +2,7 @@
 
 ## Description
 
-This React photo gallery is for true pepper fiends. Add images and descriptions of your favorite peppers. Love a particular pepper? Let it be known by clicking the pepper under the image. Not a fan of another? Trash it! When you need to come back to the gallery, fear not, because the precious pepper data is stored in a database. 
+This React photo gallery is for true pepper fiends. Add images and descriptions of your favorite peppers. Love a particular variety? Let it be known by mashing that pepper button. Not a fan of another? Trash it! When you're ready to return to the gallery, fear not, because your precious pepper data is stored in a database. 
 
 ## Demo
 
@@ -27,9 +27,10 @@ This React photo gallery is for true pepper fiends. Add images and descriptions 
 
 ## Usage
 
-1. Like an existing image by clicking on the red pepper icon under the image. 
-2. Delete an image by clicking the trash icon. The image is also deleted from the database. 
-3. Add a new image by clicking the pepper plus button at the top of the page. Enter information into the `Pepper Type` and `Image URL` fields. The information entered into `Pepper Type` is what will display when the image is toggled. Click the red upload button to add. Click the "x" button to close or cancel.  
+1. View the pepper type by clicking on the image. Click the pepper type to switch back to the image.
+2. Like an existing image by clicking on the red pepper icon under the image. 
+3. Delete an image by clicking the trash icon. The image is also deleted from the database. 
+4. Add a new image by clicking the pepper plus button at the top of the page. Enter information into the `Pepper Type` and `Image URL` fields. The information entered into `Pepper Type` is what will display when the image is toggled. Click the red upload button to add. Click `x` to close or cancel.  
 
 ## Built With
 

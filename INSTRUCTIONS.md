@@ -44,7 +44,7 @@ To practice passing values through `props` in React, you will build the gallery 
 - [X] Create a new **component** for the `GalleryList` and pass it the gallery data stored in `App` via `props`.
     - [X] Iterate (loop over) the list of gallery data
     - [X] Make GalleryItems
-- Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
+- [X] Create a new **component** called `GalleryItem.jsx` and pass it the individual gallery item via `props`. 
     - [X] Update the `GalleryList` to use this component to display an image.
     - [X] Swap the image with the description on click. Use [conditional rendering](https://reactjs.org/docs/conditional-rendering.html).
     - [X] Display the number likes for each item and include a like button.

@@ -4,7 +4,7 @@ import Grid from '@mui/material/Grid';
 
 function GalleryList({ galleryList, updateLikeCount, deleteItem }) {
   /* iterates over each item in galleryList and returns a GalleryItem component */
-  return <Container className="gallery-container" maxWidth="md">
+  return <Container maxWidth="md">
     <Grid container
       spacing={3}
       justifyContent="left"
