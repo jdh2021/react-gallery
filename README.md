@@ -1,8 +1,8 @@
-# React Pepper Gallery
+# Capsaicin Capture - A React Photo Gallery
 
 ## Description
 
-This React photo gallery is for true pepper fiends. Add images and descriptions of your favorite peppers. Love a particular variety? Let it be known by mashing that pepper button. Not a fan of another? Trash it! When you're ready to return to the gallery, fear not, because your precious pepper data is stored in a database. 
+Capsaicin Capture is a React gallery for true pepper fiends. Add images and descriptions of your favorite peppers. Love a particular variety? Let it be known by mashing that pepper button. Not a fan of another? Trash it! When you're ready to return to the gallery, fear not, because your precious pepper data is stored in a database. 
 
 ## Demo
 

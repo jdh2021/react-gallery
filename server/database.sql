@@ -8,9 +8,9 @@ CREATE TABLE "gallery" (
 );
 
 INSERT INTO "gallery" ("path", "description", "likes") 
-VALUES 	('images/bell.jpg', 'Bell', 0),
-		('images/ghost.jpg', 'Bhut Jolokia (Ghost)', 0),
+VALUES 	('images/ghost.jpg', 'Bhut Jolokia (Ghost)', 0),
 		('images/goldencayenne.jpg', 'Golden Cayenne', 0),
+		('images/shishito.jpg', 'Shishito', 0),
 		('images/habanero.jpg', 'Habanero', 0),
 		('images/jalapeno.jpg', 'Jalapeno', 0),
 		('images/poblano.jpg', 'Poblano', 0),
